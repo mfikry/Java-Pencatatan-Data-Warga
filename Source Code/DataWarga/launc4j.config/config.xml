@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\Naufal\Documents\NetBeansProjects\DataWarga\dist\DataWarga.jar</jar>
+  <outfile>C:\Users\Naufal\Documents\NetBeansProjects\DataWarga\dist\Data Warga.exe</outfile>
+  <errTitle>Program needs Java. Please install Java first.</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\Naufal\Documents\NetBeansProjects\DataWarga\src\resources\info.ico</icon>
+  <singleInstance>
+    <mutexName>DataWarga</mutexName>
+    <windowTitle>Data Warga</windowTitle>
+  </singleInstance>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>1.8.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>1.0.0.0</txtFileVersion>
+    <fileDescription>Sistem Informasi Data Warga</fileDescription>
+    <copyright>SIDW</copyright>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>1.0.0.0</txtProductVersion>
+    <productName>DataWarga</productName>
+    <companyName>SIDW</companyName>
+    <internalName>DataWarga</internalName>
+    <originalFilename>DataWarga.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>ENGLISH_US</language>
+  </versionInfo>
+</launch4jConfig>

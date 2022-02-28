@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b512e374-86c1-4d1a-a831-356b81c21a2f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="30"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tstatus.`status_perkawinan` AS tstatus_status_perkawinan,
+     tstatus.`hubungan_keluarga` AS tstatus_hubungan_keluarga,
+     tstatus.`kewarganegaraan` AS tstatus_kewarganegaraan,
+     tstatus.`dokumen_imigrasi` AS tstatus_dokumen_imigrasi,
+     tstatus.`nama_ayah` AS tstatus_nama_ayah,
+     tstatus.`nama_ibu` AS tstatus_nama_ibu,
+     tpenduduk.`namapen` AS tpenduduk_namapen,
+     tpenduduk.`nik` AS tpenduduk_nik
+FROM
+     `tpenduduk` tpenduduk INNER JOIN `tstatus` tstatus ON tpenduduk.`nik` = tstatus.`nik`]]>
+	</queryString>
+	<field name="tpenduduk_nik" class="java.lang.String"/>
+	<field name="tpenduduk_namapen" class="java.lang.String"/>
+	<field name="tstatus_status_perkawinan" class="java.lang.String"/>
+	<field name="tstatus_hubungan_keluarga" class="java.lang.String"/>
+	<field name="tstatus_kewarganegaraan" class="java.lang.String"/>
+	<field name="tstatus_dokumen_imigrasi" class="java.lang.String"/>
+	<field name="tstatus_nama_ayah" class="java.lang.String"/>
+	<field name="tstatus_nama_ibu" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<frame>
+				<reportElement uuid="38315427-0a81-49dc-af40-2218b4dd2706" mode="Opaque" x="0" y="0" width="802" height="66" backcolor="#333333"/>
+				<staticText>
+					<reportElement uuid="08c2166d-2151-4ecd-84bd-586459ba1810" style="Title" x="0" y="0" width="555" height="66"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Laporan Status Penduduk]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="0b9939ce-50a0-4e04-a626-81050024e4b0" mode="Opaque" x="0" y="70" width="802" height="32" forecolor="#000000" backcolor="#FFCC00"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="b3f4346a-931a-477d-8fc1-d774dc1434af" x="648" y="12" width="144" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="403528ec-b60f-4a43-8787-2b26af7f6533" style="Column header" x="0" y="0" width="99" height="37" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[NIK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="202a6460-4391-4f89-983c-dd3f26374d43" style="Column header" x="99" y="0" width="99" height="37" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ac2c0c31-f225-46b8-b3ff-d5b7625f9087" style="Column header" x="198" y="0" width="99" height="37" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Status Perkawinan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6f944b06-fac1-4989-bf30-75f4f294f919" style="Column header" x="297" y="0" width="99" height="37" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Hubungan Keluarga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ed70a174-ef9d-4693-82cc-5f131ef8262c" style="Column header" x="396" y="0" width="99" height="37" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Kewarganegaraan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c6632e0b-8cb4-4a43-8cdb-fd739ccfc4bb" style="Column header" x="495" y="0" width="99" height="37" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Dokumen Imigrasi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b811f584-b727-4e4a-bf46-99e563721f96" style="Column header" x="594" y="0" width="99" height="37" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Nama Ayah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="945259b2-abeb-4740-86e6-a9d6f73278ed" style="Column header" x="693" y="0" width="99" height="37" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<text><![CDATA[Nama Ibu]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement uuid="ca7188ae-cfa9-4240-875a-ddc31058ae3b" style="Row" mode="Opaque" x="0" y="0" width="797" height="18"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="1eb41584-fea9-438d-a15d-69e040966668" style="Detail" positionType="Float" x="0" y="0" width="99" height="18"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tpenduduk_nik}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="86839333-9a3b-4ed4-9003-8e3b4fd97b6e" style="Detail" positionType="Float" x="99" y="0" width="99" height="18"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tpenduduk_namapen}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="fccf658c-f537-4588-88fc-6c7b33f85c27" style="Detail" positionType="Float" x="198" y="0" width="99" height="18"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tstatus_status_perkawinan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="5db5496b-2d40-42ee-b740-99cb0083d840" style="Detail" positionType="Float" x="297" y="0" width="99" height="18"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tstatus_hubungan_keluarga}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="2470a113-8760-4c95-9775-fdd35e63b307" style="Detail" positionType="Float" x="396" y="0" width="99" height="18"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tstatus_kewarganegaraan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="86be5cc5-6f1a-49fa-aac7-d22744c5aba8" style="Detail" positionType="Float" x="495" y="0" width="99" height="18"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tstatus_dokumen_imigrasi}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="e54351cd-d73e-4889-a077-2c8cf1a9e83e" style="Detail" positionType="Float" x="594" y="0" width="99" height="18"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tstatus_nama_ayah}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="f3f5f1f8-5787-41ad-b89b-6423709ef092" style="Detail" positionType="Float" x="693" y="0" width="99" height="18"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tstatus_nama_ibu}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement uuid="2844feaa-30f3-44c4-a63a-194bb3ea2b84" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="174af022-05ce-43f6-930d-b84339ee5226" mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#333333"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="0184b2bf-01a2-42fa-be3f-908e82d4807d" style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="bd7280eb-d1c6-412c-ba29-e508457733c0" style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="9b3a3a2c-9bcc-4bce-9c91-d1c6e27d552d" style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
